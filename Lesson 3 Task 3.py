@@ -2,6 +2,7 @@
 # Task 3 (An iterable shopping list)
 
 
+
 class ShoppingList:
     def __init__(self):
         self.products = []   
@@ -28,3 +29,5 @@ shopping_list.add("pineapple", 1)
 
 for product in shopping_list:
     print(f"{product[0]}: {product[1]} units")
+
+
