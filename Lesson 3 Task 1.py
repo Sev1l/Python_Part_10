@@ -39,7 +39,7 @@ class Money:
     def __sub__(self,another):
         result = float(self.total) - float(another.total)
         if result < 0:
-            return 'ValueError: a negative result is not allowed'
+            raise ValueError('a negative result is not allowed')
         else:
             result = str(result)
             fir1 = ''
@@ -56,26 +56,18 @@ class Money:
             sec = int(sec2)
             return Money(fir,sec)
             
-
     
         
     
-
 e1 = Money(4, 5)
 e2 = Money(2, 95)
-
 e3 = e1 + e2
 e4 = e1 - e2
-
 print(e3)
 print(e4)
 
-e5 = e2-e1
-print(e5)
-
-##e1 = Money(4, 10)
-##e2 = Money(2, 5)
-##
-##print(e1 != e2)
-##print(e1 < e2)
-##print(e1 > e2)
+try:
+    e5 = e2 - e1
+    print(e5)
+except ValueError as e:
+    print(f"ValueError: {e}")
