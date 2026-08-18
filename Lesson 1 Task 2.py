@@ -8,15 +8,17 @@ class ComputerGame:
         self.name = name
         self.year = year
 
+
 class GameWarehouse:
     def __init__(self):
-        self.list = []
+        self.games = []
 
     def add_game(self, game):
-        self.list.append(game)
+        self.games.append(game)
 
     def list_games(self):
-        return self.list
+        return list(self.games)
+
 
 class GameMuseum(GameWarehouse):
     def __init__(self):
@@ -24,7 +26,7 @@ class GameMuseum(GameWarehouse):
 
     def list_games(self):
         old_games = []
-        for game in self.list:
+        for game in self.games:
             if game.year < 1990:
                 old_games.append(game)
         return old_games
